@@ -1,40 +1,40 @@
 # 2つの目盛間の整列理論とSTFTにおける目盛間の整列の定式化
 
 ## 1. 目盛間の整列理論
-本章では、物理量（例えば時間）の軸上にある2つの独立した目盛（ $t_1$ と $t_2$）を数学的に定義し、その整合性を評価するための基礎概念を規定する。
+本章では、物理量（例えば時間）の軸上にある2つの独立した目盛（ $t_{1}$ と $t_{2}$）を数学的に定義し、その整合性を評価するための基礎概念を規定する。
 
 ### 1.1 時間軸の数学的定義
 物理時間軸 $\mathbb{R}$ 上の2つの数列を以下の通り定義する。
-*   **入力側の目盛 $t_1[k_1]$**: $k_1 \Delta t_1 + t_{1, \mathrm{off}}$（$k_1 \in \mathbb{Z}$ はサンプルのインデックス、$\Delta t_1$ はサンプリング間隔、$t_{1, \mathrm{off}}$ は時刻のオフセット）。
-*   **出力側の目盛 $t_2[k_2]$**: $k_2 \Delta t_2 + t_{2, \mathrm{off}}$（$k_2 \in \mathbb{Z}$ はサンプルのインデックス、$\Delta t_2$ はサンプリング間隔、$t_{2, \mathrm{off}}$ は時刻のオフセット）。
+*   **入力側の目盛 $t_{1}[k_{1}]$**: $k_{1} \Delta t_{1} + t_{1, \mathrm{off}}$（$k_{1} \in \mathbb{Z}$ はサンプルのインデックス、$\Delta t_{1}$ はサンプリング間隔、$t_{1, \mathrm{off}}$ は時刻のオフセット）。
+*   **出力側の目盛 $t_{2}[k_{2}]$**: $k_{2} \Delta t_{2} + t_{2, \mathrm{off}}$（$k_{2} \in \mathbb{Z}$ はサンプルのインデックス、$\Delta t_{2}$ はサンプリング間隔、$t_{2, \mathrm{off}}$ は時刻のオフセット）。
 
 ### 1.2 無次元化と変数関係
 2つの目盛の関係性を記述するため、以下の無次元量を定義する。
-*   **目盛1のサンプリング間隔に対する目盛2のサンプリング間隔のスケール $s_{2 \leftarrow 1}$**: 目盛2のサンプリング間隔 $\Delta t_2$ と目盛1のサンプリング間隔 $\Delta t_1$ の比（$\Delta t_2 = s_{2 \leftarrow 1} \Delta t_1$）。
-*   **目盛1のサンプリング間隔で正規化した、目盛2の時刻オフセット $\Delta \kappa_{{2 \leftarrow 1}}$**: 2つの時間目盛の起点間の時間差を $\Delta t_1$ で正規化した値
+*   **目盛1のサンプリング間隔に対する目盛2のサンプリング間隔のスケール $s_{2 \leftarrow 1}$**: 目盛2のサンプリング間隔 $\Delta t_{2}$ と目盛1のサンプリング間隔 $\Delta t_{1}$ の比（$\Delta t_{2} = s_{2 \leftarrow 1} \Delta t_{1}$）。
+*   **目盛1のサンプリング間隔で正規化した、目盛2の時刻オフセット $\Delta \kappa_{{2 \leftarrow 1}}$**: 2つの時間目盛の起点間の時間差を $\Delta t_{1}$ で正規化した値
 
 $$
-\Delta \kappa_{{2 \leftarrow 1}} \coloneqq \frac{t_{2, \mathrm{off}} - t_{1, \mathrm{off}}}{\Delta t_1} (\in \mathbb{R})
+\Delta \kappa_{{2 \leftarrow 1}} \coloneqq \frac{t_{2, \mathrm{off}} - t_{1, \mathrm{off}}}{\Delta t_{1}} (\in \mathbb{R})
 $$
 
 これらを用いると、インデックス空間における関係式は以下のように導出される。
 
 $$
-\frac{t_2[k_2] - t_1[k_1]}{\Delta t_1} = (s_{2 \leftarrow 1} k_2 - k_1) + \Delta \kappa_{{2 \leftarrow 1}}
+\frac{t_{2}[k_{2}] - t_{1}[k_{1}]}{\Delta t_{1}} = (s_{2 \leftarrow 1} k_{2} - k_{1}) + \Delta \kappa_{{2 \leftarrow 1}}
 $$
 
 つまり左辺が0になるインデックスの関係式は以下のようになる。
 
 $$
-k_1 = s_{2 \leftarrow 1} k_2 + \Delta \kappa_{2 \leftarrow 1}
+k_{1} = s_{2 \leftarrow 1} k_{2} + \Delta \kappa_{2 \leftarrow 1}
 $$
 
 この方程式を整列（Alignment）方程式という。
 
 ### 1.3 特殊状態：整列と合同
 *   **調和的 (Harmonic)**: $s_{2 \leftarrow 1} \in \mathbb{Z}$。このとき、「目盛2は目盛1に」調和的であるという。$t_{1} \mid t_{2}$ と書く。逆は成り立たない。
-*   **整列 (Alignment)**: 調和的かつ $\Delta \kappa_{2 \leftarrow 1} \in \mathbb{Z}$。$\Delta \kappa_{2 \leftarrow 1} \in \mathbb{Z}$であることを明示的に $\Delta \kappa_{{2 \leftarrow 1}} = \Delta k_{{2 \leftarrow 1}}$ と書く。このとき、目盛2の全要素が目盛1のいずれかの要素と物理時間軸上で完全に一致する。$t_1 \supseteq t_2$ と書く。
-*   **合同 (Congruent)**: 調和的なうえでさらに $s_{2 \leftarrow 1} = 1$ （すなわち $\Delta t_1 = \Delta t_2$）である状態。目盛全体にわたって固定された位相関係を保持するための前提条件となる。$t_{1} \sim t_{2}$ と書く。
+*   **整列 (Alignment)**: 調和的かつ $\Delta \kappa_{2 \leftarrow 1} \in \mathbb{Z}$。$\Delta \kappa_{2 \leftarrow 1} \in \mathbb{Z}$であることを明示的に $\Delta \kappa_{{2 \leftarrow 1}} = \Delta k_{{2 \leftarrow 1}}$ と書く。このとき、目盛2の全要素が目盛1のいずれかの要素と物理時間軸上で完全に一致する。$t_{1} \supseteq t_{2}$ と書く。
+*   **合同 (Congruent)**: 調和的なうえでさらに $s_{2 \leftarrow 1} = 1$ （すなわち $\Delta t_{1} = \Delta t_{2}$）である状態。目盛全体にわたって固定された位相関係を保持するための前提条件となる。$t_{1} \sim t_{2}$ と書く。
 *   **一致 (Coincidence)**: 整列かつ合同な状態。$t_{1} \equiv t_{2}$ と書く。
 *   **恒等 (Identical)**: 一致かつインデックスも等しい状態。$t_{1} = t_{2}$ と書く。
 
@@ -43,13 +43,13 @@ $$
 
 調和的、整列、合同、一致、恒等のすべてにおいて推移律が成り立つ。また、合同、一致、恒等は反射律と対称律も成り立つから同値関係である。
 
-$t_{1}$ が $t_{2}$ に対して調和的（ $t_{2} \mid t_{1}$ ）かつ $t_{3}$ が $t_{2}$ に対して整列（ $t_2 \mid t_3$ ）しているとする。この時、$t_{1}$ と $t_{3}$ の関係性は直ちには決まらないが、
+$t_{1}$ が $t_{2}$ に対して調和的（ $t_{2} \mid t_{1}$ ）かつ $t_{3}$ が $t_{2}$ に対して整列（ $t_{2} \mid t_3$ ）しているとする。この時、$t_{1}$ と $t_{3}$ の関係性は直ちには決まらないが、
 
 $$
-s_{3 \leftarrow 1}= \frac{\Delta t_3}{ \Delta t_1 } = \frac{\Delta t_3}{ \Delta t_2 }\frac{\Delta t_2}{ \Delta t_1 } = \frac{s_{3 \leftarrow 2}}{s_{1 \leftarrow 2}}
+s_{3 \leftarrow 1}= \frac{\Delta t_3}{ \Delta t_{1} } = \frac{\Delta t_3}{ \Delta t_{2} }\frac{\Delta t_{2}}{ \Delta t_{1} } = \frac{s_{3 \leftarrow 2}}{s_{1 \leftarrow 2}}
 $$
 
-という関係が成り立つことと、$s_{1 \leftarrow 2}= \frac{\Delta t_1}{\Delta t_2} \in \mathbb{Z},s_{3 \leftarrow 2}= \frac{\Delta t_3}{\Delta t_2 } \in \mathbb{Z}$ であることから、$s_{1 \leftarrow 2}$ が $s_{3 \leftarrow 2}$ の約数であれば、$s_{3 \leftarrow 1} \in \mathbb{Z}$ すなわち、$t_{3}$ が $t_{1}$ に対して調和的（ $t_{1} \mid t_{3}$ ）である。
+という関係が成り立つことと、$s_{1 \leftarrow 2}= \frac{\Delta t_{1}}{\Delta t_{2}} \in \mathbb{Z},s_{3 \leftarrow 2}= \frac{\Delta t_3}{\Delta t_{2} } \in \mathbb{Z}$ であることから、$s_{1 \leftarrow 2}$ が $s_{3 \leftarrow 2}$ の約数であれば、$s_{3 \leftarrow 1} \in \mathbb{Z}$ すなわち、$t_{3}$ が $t_{1}$ に対して調和的（ $t_{1} \mid t_{3}$ ）である。
 
 
 ## 2. STFTへの整列理論の適用
@@ -93,7 +93,7 @@ $$
 
 ### 2.4 STFTにおける入力目盛、窓の目盛、出力目盛のインデックス間の関係
 オフセット目盛を介した関係性から、入力目盛、窓の目盛、出力目盛のインデックス間の関係式を導出する。この方程式はSTFTのインデックス間の対応関係を簡潔に示した式であり、計算を行う上で非常に重要である。
-整列方程式 $k_1 = s_{2 \leftarrow 1} k_2 + \Delta \kappa_{2 \leftarrow 1}$ から
+整列方程式 $k_{1} = s_{2 \leftarrow 1} k_{2} + \Delta \kappa_{2 \leftarrow 1}$ から
 
 $$
 k_{\mathrm{in}} = k_{\mathrm{w}[k_{\mathrm{out}}]} + \Delta k_{\mathrm{w}[k_{\mathrm{out}}] \leftarrow \mathrm{in}}
