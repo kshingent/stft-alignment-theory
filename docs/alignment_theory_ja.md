@@ -33,23 +33,23 @@ $$
 
 ### 1.3 特殊状態：整列と合同
 *   **調和的 (Harmonic)**: $s_{2 \leftarrow 1} \in \mathbb{Z}$。このとき、「目盛2は目盛1に」調和的であるという。$t_{1} \mid t_{2}$ と書く。逆は成り立たない。
-*   **整列 (Alignment)**: 調和的かつ $\Delta \kappa_{2 \leftarrow 1} \in \mathbb{Z}$。$\Delta \kappa_{2 \leftarrow 1} \in \mathbb{Z}$であることを明示的に$ \Delta \kappa_{{2 \leftarrow 1}} = \Delta k_{{2 \leftarrow 1}}$ と書く。このとき、目盛2の全要素が目盛1のいずれかの要素と物理時間軸上で完全に一致する。$t_1 \supseteq t_2$ と書く。
-*   **合同 (Congruent)**: 調和的なうえでさらに $s_{2 \leftarrow 1} = 1$ （すなわち $\Delta t_1 = \Delta t_2$）である状態。目盛全体にわたって固定された位相関係を保持するための前提条件となる。$ t_{1} \sim t_{2}$ と書く。
-*   **一致 (Coincidence)**: 整列かつ合同な状態。$ t_{1} \equiv t_{2}$ と書く。
-*   **恒等 (Identical)**: 一致かつインデックスも等しい状態。$ t_{1} = t_{2}$ と書く。
+*   **整列 (Alignment)**: 調和的かつ $\Delta \kappa_{2 \leftarrow 1} \in \mathbb{Z}$。$\Delta \kappa_{2 \leftarrow 1} \in \mathbb{Z}$であることを明示的に $\Delta \kappa_{{2 \leftarrow 1}} = \Delta k_{{2 \leftarrow 1}}$ と書く。このとき、目盛2の全要素が目盛1のいずれかの要素と物理時間軸上で完全に一致する。$t_1 \supseteq t_2$ と書く。
+*   **合同 (Congruent)**: 調和的なうえでさらに $s_{2 \leftarrow 1} = 1$ （すなわち $\Delta t_1 = \Delta t_2$）である状態。目盛全体にわたって固定された位相関係を保持するための前提条件となる。$t_{1} \sim t_{2}$ と書く。
+*   **一致 (Coincidence)**: 整列かつ合同な状態。$t_{1} \equiv t_{2}$ と書く。
+*   **恒等 (Identical)**: 一致かつインデックスも等しい状態。$t_{1} = t_{2}$ と書く。
 
 ### 1.4 3つ以上の目盛間の関係性
 目盛1と2にある関係性があり、目盛2と3にある関係性が成り立っているとする。このとき目盛1と3の間にどのような関係性が成り立つか整理する。
 
 調和的、整列、合同、一致、恒等のすべてにおいて推移律が成り立つ。また、合同、一致、恒等は反射律と対称律も成り立つから同値関係である。
 
-$t_{1}$ が $t_{2} $ に対して調和的（ $t_{2} \mid t_{1}$ ）かつ $t_{3}$ が $t_{2} $ に対して整列（ $t_2 \mid t_3$ ）しているとする。この時、$t_{1}$ と $t_{3} $ の関係性は直ちには決まらないが、
+$t_{1}$ が $t_{2}$ に対して調和的（ $t_{2} \mid t_{1}$ ）かつ $t_{3}$ が $t_{2}$ に対して整列（ $t_2 \mid t_3$ ）しているとする。この時、$t_{1}$ と $t_{3}$ の関係性は直ちには決まらないが、
 
 $$
 s_{3 \leftarrow 1}= \frac{\Delta t_3}{ \Delta t_1 } = \frac{\Delta t_3}{ \Delta t_2 }\frac{\Delta t_2}{ \Delta t_1 } = \frac{s_{3 \leftarrow 2}}{s_{1 \leftarrow 2}}
 $$
 
-という関係が成り立つことと、$ s_{1 \leftarrow 2}= \frac{\Delta t_1}{\Delta t_2} \in \mathbb{Z},s_{3 \leftarrow 2}= \frac{\Delta t_3}{\Delta t_2 } \in \mathbb{Z} $ であることから、$ s_{1 \leftarrow 2}$ が $ s_{3 \leftarrow 2}$ の約数であれば、$ s_{3 \leftarrow 1} \in \mathbb{Z}$ すなわち、$t_{3}$ が $t_{1} $ に対して調和的（ $t_{1} \mid t_{3}$ ）である。
+という関係が成り立つことと、$s_{1 \leftarrow 2}= \frac{\Delta t_1}{\Delta t_2} \in \mathbb{Z},s_{3 \leftarrow 2}= \frac{\Delta t_3}{\Delta t_2 } \in \mathbb{Z}$ であることから、$s_{1 \leftarrow 2}$ が $s_{3 \leftarrow 2}$ の約数であれば、$s_{3 \leftarrow 1} \in \mathbb{Z}$ すなわち、$t_{3}$ が $t_{1}$ に対して調和的（ $t_{1} \mid t_{3}$ ）である。
 
 
 ## 2. STFTへの整列理論の適用
@@ -86,10 +86,10 @@ $$
 t_{\mathrm{woff}}[k_{\mathrm{out}}] \coloneqq k_{\mathrm{out}} \Delta t_{\mathrm{out}} + t_{\mathrm{woff, off}}
 $$
 
-ここで、初期オフセットは $t_{\mathrm{woff, off}} \coloneqq t_{\mathrm{w}[0], \mathrm{off}}$ である。すなわち、$ \Delta \kappa_{\mathrm{woff} \leftarrow \mathrm{w}[0]} = 0 $であるから、$ t_{\mathrm{w}[0]} \supseteq t_{\mathrm{woff}} $である。推移律から$ t_{\mathrm{w}[k_{\mathrm{out}}]} \supseteq t_{\mathrm{woff}} $も直ちに成り立つ。
+ここで、初期オフセットは $t_{\mathrm{woff, off}} \coloneqq t_{\mathrm{w}[0], \mathrm{off}}$ である。すなわち、$\Delta \kappa_{\mathrm{woff} \leftarrow \mathrm{w}[0]} = 0 $であるから、$t_{\mathrm{w}[0]} \supseteq t_{\mathrm{woff}} $である。推移律から $t_{\mathrm{w}[k_{\mathrm{out}}]} \supseteq t_{\mathrm{woff}} $も直ちに成り立つ。
 
 ### 2.3 STFTにおける入力目盛と出力目盛の関係
-オフセット目盛を用いると入力目盛と出力目盛の関係を簡単に理解することができる。オフセット目盛 $t_{\mathrm{woff}}$ と出力時間目盛 $t_{\mathrm{out}}$ の目盛間隔は同じであるから「合同」である。入力時間目盛 $t_{\mathrm{in}}$ に対してオフセット目盛 $t_{\mathrm{woff}}$ は「整列」している。したがって、入力時間目盛に対して出力時間目盛は「調和的」である。これが「整列」であるかどうかは、$ \Delta \kappa_{\mathrm{out} \leftarrow \mathrm{in}}$ が整数かどうかで決まる。
+オフセット目盛を用いると入力目盛と出力目盛の関係を簡単に理解することができる。オフセット目盛 $t_{\mathrm{woff}}$ と出力時間目盛 $t_{\mathrm{out}}$ の目盛間隔は同じであるから「合同」である。入力時間目盛 $t_{\mathrm{in}}$ に対してオフセット目盛 $t_{\mathrm{woff}}$ は「整列」している。したがって、入力時間目盛に対して出力時間目盛は「調和的」である。これが「整列」であるかどうかは、$\Delta \kappa_{\mathrm{out} \leftarrow \mathrm{in}}$ が整数かどうかで決まる。
 
 ### 2.4 STFTにおける入力目盛、窓の目盛、出力目盛のインデックス間の関係
 オフセット目盛を介した関係性から、入力目盛、窓の目盛、出力目盛のインデックス間の関係式を導出する。この方程式はSTFTのインデックス間の対応関係を簡潔に示した式であり、計算を行う上で非常に重要である。
@@ -105,7 +105,7 @@ $$
 \Delta k_{\mathrm{w}[k_{\mathrm{out}}] \leftarrow \mathrm{in}} = \frac{t_{\mathrm{w}[k_{\mathrm{out}}], \mathrm{off}} - t_{\mathrm{in}, \mathrm{off}}}{\Delta t_{\mathrm{in}}}
 $$
 
-となる。 $ t_{\mathrm{w}[k_{\mathrm{out}}], \mathrm{off}} = t_{\mathrm{woff}}[k_{\mathrm{out}}]$ だから、代入すると以下を得る。
+となる。 $t_{\mathrm{w}[k_{\mathrm{out}}], \mathrm{off}} = t_{\mathrm{woff}}[k_{\mathrm{out}}]$ だから、代入すると以下を得る。
 
 $$
 \Delta k_{\mathrm{w}[k_{\mathrm{out}}] \leftarrow \mathrm{in}} = \frac{ t_{\mathrm{woff}}[k_{\mathrm{out}}] - t_{\mathrm{in}, \mathrm{off}}}{\Delta t_{\mathrm{in}}}
